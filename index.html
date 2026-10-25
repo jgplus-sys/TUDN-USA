@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JG Plus - Visor</title>
+
+<style>
+    html, body {
+        margin: 0; 
+        padding: 0; 
+        width: 100%; 
+        height: 100%;
+        background: #000; 
+        overflow: hidden; 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #contenedor {
+        position: relative; 
+        width: 100vw; 
+        height: 100vh;
+    }
+
+    /* DIÁLOGO DE AVISO */
+    #overlay-aviso {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .caja-aviso {
+        background: #18181b;
+        border: 1px solid #27272a;
+        border-radius: 12px;
+        padding: 24px;
+        max-width: 340px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    }
+
+    .titulo-aviso {
+        color: #f4f4f5;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+
+    .texto-aviso {
+        color: #a1a1aa;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .btn-entendido {
+        background: #a020f0;
+        color: #ffffff;
+        border: none;
+        padding: 12px;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.2s;
+    }
+
+    .btn-entendido:active {
+        transform: scale(0.98);
+    }
+
+    iframe {
+        width: 100%; 
+        height: 100%;
+        border: 0;
+        position: absolute;
+        top: 0; 
+        left: 0;
+        z-index: 1;
+    }
+</style>
+</head>
+
+<body>
+
+<div id="contenedor">
+    <!-- Diálogo de Advertencia -->
+    <div id="overlay-aviso">
+        <div class="caja-aviso">
+            <div class="titulo-aviso">JG Plus</div>
+            <div class="texto-aviso">Haz clic en continuar para iniciar la reproducción correctamente.</div>
+            <button id="btnEntendido" class="btn-entendido">Continuar</button>
+        </div>
+    </div>
+
+    <!-- Reproductor -->
+    <iframe
+        id="player"
+        allow="autoplay; encrypted-media; fullscreen"
+        allowfullscreen
+        scrolling="no"
+        src="https://ehgembxe.cfd/q2u5urq3-7318"></iframe>
+</div>
+
+<script>
+    var overlay = document.getElementById("overlay-aviso");
+    var btnEntendido = document.getElementById("btnEntendido");
+
+    btnEntendido.addEventListener("click", function() {
+        overlay.style.display = "none";
+    });
+</script>
+
+</body>
+</html>
